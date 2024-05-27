@@ -1,0 +1,13 @@
+from telethon import TelegramClient, events
+import asyncio
+
+
+@client.on(events.ChatAction)
+async def handler(event):
+    if event.user_joined:
+        user = await event.get_user()
+        message = await event.reply(f'مرحبًا بك في القناة، {user.first_name}!')
+        await asyncio.sleep(1)
+        await message.delete()
+
+client.run_until_disconnected()
