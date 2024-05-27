@@ -1,0 +1,30 @@
+{
+  "name": "Telegram Bot",
+  "description": "A Telegram bot that welcomes new users in channels.",
+  "logo": "https://telegram.org/img/t_logo.png",
+  "env": {
+    "API_ID": {
+      "description": "Your Telegram API ID",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Your Telegram API Hash",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "The token of your Telegram bot",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
